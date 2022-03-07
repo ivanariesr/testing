@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Belajar vue</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <h1 v-html="isi"></h1>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+    var vm = new Vue({
+        el : '#app',
+        data: {
+            isi: "<span style='color:red'>Hello World!</a>",
+            },
+            
+    //INI ADALAH HOOK a hook e
+        beforeCreate () {
+            console.log('before create: '+
+            'message = ' + this.isi)
+            },
+        created () {
+            console.log('created: '+
+            'message = ' + this.isi)
+            console.log(this.$data)
+            },
+        beforeMount() {
+            console.log('before mount: '+
+            'el = ' + this.$el.textContent)
+            },
+        mounted() {
+            console.log('mounted: '+
+            'el = ' + this.$el.textContent)
+            },
+        beforeUpdate() {
+            console.log('before update: '+
+            'el = ' + this.$el.textContent)
+            },
+        updated() {
+            console.log('update: '+
+            'el = ' + this.$el.textContent)
+            },
+});
+    </script>
+</html>
